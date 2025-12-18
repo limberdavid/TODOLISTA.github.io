@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIMBER | ToDo Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER LIMBER -->
+    <header class="header">
+        <div class="brand">
+            <span class="brand-logo">◆</span>
+            <h1>LIMBER</h1>
+        </div>
+        <p class="brand-subtitle">Smart Task Manager</p>
+    </header>
+
+    <!-- APP -->
+    <main class="wrapper">
+        <section class="todo-card">
+
+            <div class="card-header">
+                <h2>Panel de Tareas</h2>
+                <span id="itemsLeft">0 pendientes</span>
+            </div>
+
+            <div class="input-area">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    placeholder="Añade una nueva tarea..."
+                >
+                <button id="addBtn">＋</button>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">
+                    Todas <span id="allCount">0</span>
+                </button>
+                <button class="filter-btn" data-filter="active">
+                    Activas <span id="activeCount">0</span>
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    Hechas <span id="completedCount">0</span>
+                </button>
+            </div>
+
+            <ul id="todoList" class="todo-list"></ul>
+
+            <div class="footer-actions">
+                <button id="clearCompleted" class="danger">
+                    Limpiar completadas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

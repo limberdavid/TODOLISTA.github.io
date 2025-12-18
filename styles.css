@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+}
+
+/* HEADER */
+.header {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.brand-logo {
+    color: #00ffe1;
+    font-size: 1.5rem;
+}
+
+.brand h1 {
+    letter-spacing: 4px;
+    font-size: 2.2rem;
+}
+
+.brand-subtitle {
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+/* WRAPPER */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* CARD */
+.todo-card {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 22px;
+    padding: 2rem;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+}
+
+/* CARD HEADER */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-header h2 {
+    font-size: 1.3rem;
+}
+
+#itemsLeft {
+    font-size: 0.85rem;
+    color: #00ffe1;
+}
+
+/* INPUT */
+.input-area {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1.4rem;
+}
+
+#todoInput {
+    flex: 1;
+    padding: 0.9rem;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+}
+
+#addBtn {
+    width: 48px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #00ffe1, #00b3ff);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#addBtn:hover {
+    transform: scale(1.08);
+}
+
+/* FILTERS */
+.filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.filter-btn {
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.filter-btn.active {
+    background: #00ffe1;
+    color: #000;
+    font-weight: 600;
+}
+
+.filter-btn span {
+    background: rgba(0,0,0,0.3);
+    padding: 0 6px;
+    border-radius: 20px;
+}
+
+/* LIST */
+.todo-list {
+    list-style: none;
+    max-height: 380px;
+    overflow-y: auto;
+    margin-bottom: 1.2rem;
+}
+
+.todo-list:empty::after {
+    content: "No hay tareas todavía";
+    display: block;
+    text-align: center;
+    opacity: 0.5;
+    padding: 2rem 0;
+}
+
+/* ITEM */
+.todo-item {
+    background: rgba(0,0,0,0.35);
+    padding: 0.8rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+    animation: appear 0.25s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-item.completed {
+    opacity: 0.55;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+}
+
+.todo-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.delete-btn {
+    background: #ff4d6d;
+    border: none;
+    color: white;
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer-actions {
+    text-align: center;
+}
+
+.danger {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 12px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .input-area {
+        flex-direction: column;
+    }
+
+    #addBtn {
+        width: 100%;
+    }
+}
